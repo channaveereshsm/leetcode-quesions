@@ -1,0 +1,72 @@
+https://leetcode.com/problems/most-frequent-prime/description/
+class Solution {
+    HashMap<Integer,Integer> m=new HashMap<>();
+    public boolean isprime(int n)
+    {
+        for(int i=2;i<=n/2;i++)
+        {
+            if(n%i==0)
+              return false;
+        }
+        return true;
+    }
+    public void find(int[][]mat,int x,int y,int i,int j)
+    {
+        int ans=mat[i][j];
+        i=x+i;
+        j=y+j;
+        while(i>=0&&j>=0 &&i<mat.length&&j<mat[0].length)
+        {
+        
+              ans=ans*10+mat[i][j];
+                 i=i+x;
+              j=j+y;
+             if(ans%2==0||ans%5==0)
+              continue;
+             if(!m.containsKey(ans))
+             {
+                 m.put(ans,0);
+             }  
+             m.replace(ans,m.get(ans)+1);
+        }
+    }
+    public int mostFrequentPrime(int[][] mat) {
+        int max=0;
+        for(int i=0;i<mat.length;i++)
+         {
+             for(int j=0;j<mat[0].length;j++)
+             {
+
+               for(int x=-1;x<2;x++)
+                 {
+                     for(int y=-1;y<2;y++)
+                     {
+                         if(x!=0||y!=0)
+                         find(mat,x,y,i,j);
+                     }
+                 }
+              
+             }
+         }
+         int val=-1;
+
+         for(int k:m.keySet())
+         {
+             if(isprime(k))
+             {
+                 if(max<=m.get(k))
+                 {
+                     if(max==m.get(k))
+                      val=Math.max(val,k);
+                     else
+                      val=k; 
+                     max=m.get(k);
+                    
+                 }
+             }
+         }
+        
+         return val;
+        
+    }
+}

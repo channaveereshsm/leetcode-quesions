@@ -23,7 +23,9 @@ class Solution {
                     int min=1000000;
                     for(int k=0;k<lx.size();k++)
                     {
-                      min=Math.min(min,Math.abs(lx.get(k)-i)+Math.abs(ly.get(k)-j));  
+                      min=Math.min(min,Math.abs(lx.get(k)-i)+Math.abs(ly.get(k)-j)); 
+                        if(min==1)
+                            break;
                     }
                     if(min!=1000000)
                     {

@@ -18,7 +18,7 @@ class Solution {
                 if(h.containsKey(a))
               {   
                   w[i]=a;
-                  k=0;
+                  k=b.length();
                   f=0;  
               }
                           

@@ -10,7 +10,6 @@ class Solution {
         for(int i=0;i<w.length;i++)
         {
             String b=w[i];
-            String b1=b;
             int f=1,k=1;
              while(k<w[i].length())
              { String a=b.substring(0,k);
@@ -18,27 +17,22 @@ class Solution {
                 if(h.containsKey(a))
               {   
                   w[i]=a;
-                  k=b.length();
-                  f=0;  
+                  break;
+                   
               }
-                          
               
-              
-              }
-            if(f==1)
-              {
-                  w[i]=b1;
               }
             
         }
-       
-        String ans=w[0];
+       StringBuilder b=new StringBuilder();
+        b.append(w[0]);
         for(int i=1;i<w.length;i++)
         {
-            ans=ans+" "+w[i];
+          b.append(" ");
+            b.append(w[i]);
         }
         
         
-        return ans;
+        return b.toString();
     }
 }

@@ -1,7 +1,15 @@
 class Solution {
     public boolean divisorGame(int n) {
-       if(n%2==0)
-        return true;
-        return false;
+      if(n==1)
+      return false;
+      if(n==2)
+      return true;
+
+      for(int i=1;i<=n/2;i++)
+      {
+        if(n%i==0)
+        return !(divisorGame(n-i));
+      }
+      return false;
     }
 }

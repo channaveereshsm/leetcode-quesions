@@ -19,7 +19,8 @@ class Solution {
             ans= ans%1000000007;
             return (int)ans;
         }
-        int c1=0,l1=0,l2=0;
+        int c1=0;
+        long l1=0,l2=0;
       for(int i=0;i<s.length();i++)
       {
         if(s.charAt(i)=='1')
@@ -35,12 +36,9 @@ class Solution {
             l2++;
         }
       }
-    int ans=0;
-      for(int i=0;i<l1;i++)
-      {
-     ans=ans+l2;
-     ans=ans%1000000007;
-      }
-        return ans;
+    long ans=0;
+      ans=l1*l2;
+      ans=ans%1000000007;
+        return (int)ans;
     }
 }

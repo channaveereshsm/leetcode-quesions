@@ -32,7 +32,7 @@ class Solution {
         ans[0]=-1;
         ans[1]=-1;
         int min=Integer.MAX_VALUE,max=Integer.MIN_VALUE;
-        Collections.sort(l1);
+        
         if(l1.size()>1)
            max=l1.get(l1.size()-1)-l1.get(0);
         for(int i=1;i<l1.size();i++)

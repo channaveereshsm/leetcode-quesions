@@ -54,6 +54,8 @@ class Solution {
                        }
                        f=1;
                     }
+                    if(f==1)
+                     break;
 
                 }
             }

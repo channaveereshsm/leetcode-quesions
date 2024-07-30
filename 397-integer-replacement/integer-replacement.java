@@ -18,12 +18,9 @@ class Solution {
         return m.get(n);
     }
     public int integerReplacement(int n) {
-        long y=1;
-        for(int i=1;i<31;i++)
-        {m.put(y,i);
-        y=y*2;
-        }
+       
+        
 
-        return Math.max(find(n)-1,0);
+        return find(n);
     }
 }
